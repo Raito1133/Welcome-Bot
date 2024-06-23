@@ -120,8 +120,6 @@ client.on('guildMemberAdd', async member => {
           .setThumbnail(thumbnail)
           .setAuthor({ name: authorName, iconURL: authorIcon, url: authorURL });
 
-      await welcomeChannel.send({ content: welcomeMessage, embeds: [embed] });
-      //REMOVE BELOW LINE IF YOU DONT WANT DM MESSAGE
       await member.send({ content: welcomeMessageDm, embeds: [embed] });
   } catch (error) {
       console.error('Error sending welcome message:', error);
