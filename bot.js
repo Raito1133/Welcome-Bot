@@ -107,9 +107,9 @@ client.on('guildMemberAdd', async member => {
 
       const { title, description, image, footer, color, footerURL, thumbnail, authorName, authorURL, authorIcon } = processedMessageData;
 
-      const welcomeMessage = `Greetings,${member}! Enjoy your stay!`;
+      const welcomeMessage = `Greetings,${member}! Please free yourself!`;
 
-      const welcomeMessageDm = `Warm greetings from **${member.guild.name}!**`;
+      const welcomeMessageDm = `We're happy to have you**${member.guild.name}!**`;
       const embed = new EmbedBuilder()
           .setTitle(title)
           .setDescription(description)
@@ -119,14 +119,15 @@ client.on('guildMemberAdd', async member => {
           .setFooter({ text: footer, iconURL: footerURL })
           .setThumbnail(thumbnail)
           .setAuthor({ name: authorName, iconURL: authorIcon, url: authorURL });
-      
- await welcomeChannel.send({ content: welcomeMessage, embeds: [embed] });
+
+      await welcomeChannel.send({ content: welcomeMessage, embeds: [embed] });
       //REMOVE BELOW LINE IF YOU DONT WANT DM MESSAGE
       await member.send({ content: welcomeMessageDm, embeds: [embed] });
   } catch (error) {
       console.error('Error sending welcome message:', error);
   }
 });
+
 
 
 
@@ -174,4 +175,3 @@ printWatermark();
 
 
 */
-
