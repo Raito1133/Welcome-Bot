@@ -119,7 +119,7 @@ client.on('guildMemberAdd', async member => {
           .setFooter({ text: footer, iconURL: footerURL })
           .setThumbnail(thumbnail)
           .setAuthor({ name: authorName, iconURL: authorIcon, url: authorURL });
-
+      await welcomeChannel.send({ content: welcomeMessage, embeds: [embed] });
       await member.send({ content: welcomeMessageDm, embeds: [embed] });
   } catch (error) {
       console.error('Error sending welcome message:', error);
