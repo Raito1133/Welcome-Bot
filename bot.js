@@ -107,9 +107,9 @@ client.on('guildMemberAdd', async member => {
 
       const { title, description, image, footer, color, footerURL, thumbnail, authorName, authorURL, authorIcon } = processedMessageData;
 
-      const welcomeMessage = `Greetings,${member}! Please free yourself!`;
+      const welcomeMessage = `Greetings,${member}! Please feel free to explore our server!`;
 
-      const welcomeMessageDm = `We're happy to have you**${member.guild.name}!**`;
+      const welcomeMessageDm = `Welcome to Sirea! **${member.guild.name}!**`;
       const embed = new EmbedBuilder()
           .setTitle(title)
           .setDescription(description)
@@ -122,7 +122,7 @@ client.on('guildMemberAdd', async member => {
 
       await welcomeChannel.send({ content: welcomeMessage, embeds: [embed] });
       //REMOVE BELOW LINE IF YOU DONT WANT DM MESSAGE
-      await member.send({ content: welcomeMessageDm, embeds: [embed] });
+  
   } catch (error) {
       console.error('Error sending welcome message:', error);
   }
